@@ -13,6 +13,7 @@ public:
         vector<pair<int, int>> projects;
         priority_queue<int> available_profits;
 
+        // bind the captials and the profits
         for (int i = 0; i < capital.size(); ++i)
             projects.emplace_back(capital[i], profits[i]);
 
@@ -36,6 +37,7 @@ public:
             if (available_profits.empty())
                 break;
 
+            // get the highest available profit
             w += available_profits.top();
             available_profits.pop();
         }
